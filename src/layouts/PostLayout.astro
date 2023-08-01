@@ -1,0 +1,52 @@
+---
+import { Picture } from "@astrojs/image/components";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import BaseLayout from "./BaseLayout.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  publishDate: Date;
+  updatedDate?: string;
+  heroImage?: any;
+}
+
+const { title, description, publishDate, updatedDate, heroImage } = Astro.props;
+
+dayjs.extend(localizedFormat);
+const displayDate = dayjs(publishDate).format("ll");
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={heroImage}
+  navbarActiveItemID="blog"
+>
+  <article class="items-center">
+    {
+      heroImage && (
+        <Picture
+          widths={[400, 800]}
+          src={heroImage}
+          alt={title}
+          class="w-full mb-6 rounded-xl shadow-md hover:shadow-2xl transition duration-300"
+        />
+      )
+    }
+    <h1 class="title my-4 mt-8 text-4xl font-bold text-green-400">{title}</h1>
+    {publishDate && <time>{displayDate}</time>}
+    <br />
+    {
+      updatedDate && (
+        <div>
+          {" "}
+          Última vez actualizado: <time>{updatedDate}</time>{" "}
+        </div>
+      )
+    }
+    <div class="divider my-2"></div>
+    <slot />
+  </article>
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+const { post } = Astro.props;
+
+const dateFormat = new Intl.DateTimeFormat("es-MX", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+});
+
+function getFormattedDate(date: string | number | Date) {
+  return dateFormat.format(new Date(date));
+}
+
+const date = new Date(post.data.publishDate);
+const datetime = date.toISOString();
+const postDate = getFormattedDate(date);
+---
+
+<time datetime={datetime} class="min-w-[120px] text-gray-500">{postDate}</time>
+<div>
+  <a class="underline decoration-2" href={`/blog/${post.slug}/`}>
+    {post.data.title}
+  </a>
+</div>
