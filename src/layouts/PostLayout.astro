@@ -46,7 +46,10 @@ const displayDate = dayjs(publishDate).format("ll");
         </div>
       )
     }
-    <div class="divider my-2"></div>
-    <slot />
+    <div class="divider my-2 mb-4"></div>
+    <slot class="my-12" />
   </article>
 </BaseLayout>
+
+<style>
+</style>

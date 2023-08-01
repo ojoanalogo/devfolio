@@ -1,14 +1,17 @@
 ---
-title: "Hello world"
+title: "Hola mundo"
 description: "Primer señal de vida"
 publishDate: 2023-07-29
 published: true
 heroImage: "2001-a-space-odyssey-wallpapers.jpg"
 ---
 
-## Bienvenidos
+## Bienvenidos a dev.ojoanalogo.com
 
 ```js
-console.log("Hello world")
+console.log("hola mundo")
 ```
 
+```python
+print("Hello")
+```
