@@ -7,6 +7,8 @@ import { sortMDByDate } from "../utils";
 const MAX_POSTS = 10;
 const allPosts = await getCollection("blog");
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+
+const languages = ["js", "ts", "python", "sql", "dart", "go"];
 ---
 
 <BaseLayout navbarActiveItemID="home">
@@ -31,12 +33,29 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
     </p>
     <p class="mb-4">
       Mi nombre es <span class="font-black">Alfonso Reyes</span> y soy un desarrollador
-      de software con especialidad en backend que vive en la tierra de los tacos,
-      México 🌮.
+      de software con especialidad en backend. Actualmente trabajo en <a
+        href="https://monopolio.com.mx"
+        class="font-bold"
+        target="_blank">Monopolio</a
+      > como ingeniero backend.
     </p>
-    <p>
-      Entre mis pasatiempos se encuentran la fotografía, programación y
-      videojuegos, sobre todo los de estrategia y simulación.
+    <p class="mt-4">
+      En este sitio encontrarás artículos sobre programación, desarrollo web
+      demás cosas que quizá pueden ser de ayuda.
+      <br />
+      <div class="my-8">
+        Aquí hablamos:
+        {
+          languages.map(
+            (
+              lang
+              // addh over with animation
+            ) => (
+              <span class="kbd kbd-md hover:shadow-xl hover:scale-110 duration-150">{`.${lang}`}</span>
+            )
+          )
+        }
+      </div>
     </p>
     <div class="mt-4 flex flex-wrap items-center gap-x-4 sm:items-center">
       <ul class="flex flex-1 items-center gap-x-4 sm:flex-initial">

@@ -1,6 +1,6 @@
 ---
 const { navbarActiveItemID, title } = Astro.props;
-const activeClass = "bg-base-300"; // For primary color replace with `active` class
+const activeClasses = ["bg-base-300", "shadow-lg"]; // For primary color replace with `active` class
 
 const collections: Array<{
   title: string;
@@ -32,7 +32,10 @@ const collections: Array<{
     aria-label="Main menu"
     class="flex items-center flex-col md:flex-row text-neutral-content"
   >
-    <a target="_blank" href="https://es.wikipedia.org/wiki/Hydrochoerus_hydrochaeris">
+    <a
+      target="_self"
+      href="/"
+    >
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +78,11 @@ const collections: Array<{
     {
       collections.map((link) => {
         return (
-          <a href={link.url} id={link.id} class="px-4 py-1 hover:underline">
+          <a
+            href={link.url}
+            id={link.id}
+            class="px-4 py-1 hover:underline rounded-lg"
+          >
             {link.title}
           </a>
         );
@@ -86,10 +93,13 @@ const collections: Array<{
 
 <script
   define:vars={{
-    navbarActiveItemID: navbarActiveItemID,
-    activeClass: activeClass,
+    navbarActiveItemID,
+    activeClasses,
   }}
 >
-  const activeItemElem = document.getElementById(navbarActiveItemID);
-  activeItemElem.classList.add(activeClass);
+  const activeItemElement = document.getElementById(navbarActiveItemID);
+
+  activeClasses.forEach((activeClass) => {
+    activeItemElement.classList.add(activeClass);
+  });
 </script>
