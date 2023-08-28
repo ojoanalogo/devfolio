@@ -1,6 +1,6 @@
 ---
 const { navbarActiveItemID, title } = Astro.props;
-const activeClasses = ["bg-base-300", "shadow-lg"]; // For primary color replace with `active` class
+const activeClasses = ["text-emerald-400", "font-black"];
 
 const collections: Array<{
   title: string;
@@ -26,16 +26,13 @@ const collections: Array<{
 ];
 ---
 
-<header id="main-header" class="group mb-12 flex justify-center content-center">
+<header id="main-header" class="mb-6 md:mb-12">
   <nav
     id="navigation-menu"
     aria-label="Main menu"
-    class="flex items-center flex-col md:flex-row text-neutral-content"
+    class="flex items-center flex-col md:flex-row content-stretch"
   >
-    <a
-      target="_self"
-      href="/"
-    >
+    <a target="_self" href="/">
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -97,9 +94,10 @@ const collections: Array<{
     activeClasses,
   }}
 >
-  const activeItemElement = document.getElementById(navbarActiveItemID);
+console.log(navbarActiveItemID);
+const activeItemElement = document.getElementById(navbarActiveItemID);
 
-  activeClasses.forEach((activeClass) => {
-    activeItemElement.classList.add(activeClass);
-  });
+activeClasses.forEach((activeClass) => {
+  activeItemElement.classList.add(activeClass);
+});
 </script>
