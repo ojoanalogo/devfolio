@@ -6,7 +6,7 @@ published: true
 heroImage: "2001-a-space-odyssey-wallpapers.jpg"
 ---
 
-## Bienvenidos a dev.ojoanalogo.com
+## Bienvenidos a alfon.so
 
 ```js
 console.log("hola mundo")

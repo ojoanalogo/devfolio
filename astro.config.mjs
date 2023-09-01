@@ -17,6 +17,6 @@ export default defineConfig({
     }),
     image(),
   ],
-  site: "https://ojoanalogo.com",
+  site: "https://alfon.so",
   compressHTML: true,
 });
