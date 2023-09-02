@@ -46,9 +46,6 @@ const isProd = import.meta.env.PROD;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
-
-<link href="/css/lightbox.min.css" rel="stylesheet" />
-
 {
   // render only on production
   isProd && (
