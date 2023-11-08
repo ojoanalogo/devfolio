@@ -3,9 +3,8 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 
-import image from "@astrojs/image";
-
 // https://astro.build/config
+import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,7 +14,7 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    image(),
+    compress(),
   ],
   site: "https://alfon.so",
   compressHTML: true,
