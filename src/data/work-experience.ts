@@ -28,11 +28,8 @@ export const workExperienceData: Array<WorkExperience> = [
     technologies: [
       "AWS",
       "Node.js",
-      "TypeScript",
       "Serverless",
       "PostgreSQL",
-      "Redis",
-      "Docker",
       "Terraform",
       "GitLab CI/CD",
       "DynamoDB",
