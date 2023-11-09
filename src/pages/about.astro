@@ -1,20 +1,59 @@
 ---
+import {
+workExperienceData,
+type WorkExperience,
+} from "../data/work-experience";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Sobre mí" navbarActiveItemID="about">
   <section aria-label="Publicaciones de mi sitio">
     <h1 class="md:text-3xl text-2xl font-black mb-6 text-white drop-shadow-lg">
-      🐸 ¡Hola!
+      🤠 ¡Hola! Soy Alfonso
     </h1>
-    <p>Wenas wenas</p>
-
-
-    <ul class="steps steps-vertical">
-      <li data-content="🏘️" class="step step-neutral">Backend engineer / DD360.mx</li>
-      <li data-content="🏒" class="step step-neutral">Backend / champs.app</li>
-      <li data-content="🥗" class="step step-neutral">Intern / ieSoluciones</li>
+    <p class="">Ingeniero backend</p>
+    <p>Me gustan los gatos</p>
+    <ul class="steps steps-vertical mt-4">
+      {
+        workExperienceData.map((workItem: WorkExperience) => (
+          <li data-content={workItem.listIcon} class="step step-neutral">
+            <div
+              class={
+                workItem.active
+                  ? "flex flex-col bg-zinc-900 shadow-2xl rounded-lg my-2"
+                  : "flex flex-col bg-gray-900 shadow-2xl rounded-lg my-2"
+              }
+            >
+              <div
+                class={
+                  workItem.active
+                    ? "bg-zinc-800 py-2 px-6 rounded-tr-lg rounded-tl-lg"
+                    : "bg-gray-800 py-2 px-6 rounded-tr-lg rounded-tl-lg"
+                }
+              >
+                <span class="font-bold float-left text-gray-200">
+                  {workItem.title} @ {workItem.company}
+                </span>
+                <span class="font-bold text-green-400 float-right">
+                  {workItem.startDate} - {workItem.endDate}
+                </span>
+              </div>
+              <div class="text-sm py-4 px-6">
+                <div class="flex flex-row text-gray-200">
+                  <span class="font-bold">📍 {workItem.location}</span>
+                  <span class="font-bold ml-8">
+                    🌐{" "}
+                    <a href={workItem.website} target="_blank">
+                      {workItem.website}
+                    </a>
+                  </span>
+                </div>
+                <p class="mt-2 text-left">{workItem.description}</p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
     </ul>
-
   </section>
 </BaseLayout>
