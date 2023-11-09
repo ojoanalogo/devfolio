@@ -1,6 +1,6 @@
 ---
 const { navbarActiveItemID, title } = Astro.props;
-const activeClasses = ["text-emerald-400", "font-black"];
+const activeClasses = ["text-emerald-500", "font-black"];
 
 const collections: Array<{
   title: string;
@@ -14,12 +14,12 @@ const collections: Array<{
     url: "/",
   },
   {
-    title: "about.html",
-    id: "about",
-    url: "/about",
+    title: "cv.ts",
+    id: "cv",
+    url: "/cv",
   },
   {
-    title: "blog.html",
+    title: "blog.js",
     id: "blog",
     url: "/blog",
   },
@@ -68,7 +68,7 @@ const collections: Array<{
     <a
       href="/"
       target="_self"
-      class="py-4 px-8 font-black text-3xl md:text-xl whitespace-nowrap text-zinc-300"
+      class="py-4 px-8 font-black md:text-md whitespace-nowrap text-zinc-300"
     >
       {title}
     </a>

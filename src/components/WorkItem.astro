@@ -1,0 +1,47 @@
+---
+import type { WorkExperience } from "../data/work-experience";
+
+interface Props {
+  data: WorkExperience;
+}
+
+const { data } = Astro.props;
+---
+
+<div
+  class={`${
+    data.active ? "bg-zinc-900" : "bg-gray-900"
+  } flex flex-col shadow-2xl rounded-lg my-6 pb-4`}
+>
+  <div
+    class={`${
+      data.active ? "bg-zinc-800" : "bg-gray-800"
+    } py-2 px-6 rounded-tr-lg rounded-tl-lg flex flex-row justify-between`}
+  >
+    <span class="font-bold text-gray-200 text-sm md:text-md">
+      {data.title} @ {data.company}
+    </span>
+    <span class="font-bold text-green-400 text-sm">
+      {data.startDate} - {data.endDate}
+    </span>
+  </div>
+  <div class="text-sm py-4 px-6">
+    <div class="flex flex-row text-gray-200">
+      <span class="font-bold">📍 {data.location}</span>
+      <span class="font-bold ml-8">
+        🌐{" "}
+        <a href={data.website} target="_blank">
+          {data.website}
+        </a>
+      </span>
+    </div>
+    <p class="mt-2 text-left">{data.description}</p>
+  </div>
+  <div class="mx-6">
+    {
+      data.technologies.map((technology) => (
+        <span class="kbd kbd-sm hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem] mt-2">{`${technology}`}</span>
+      ))
+    }
+  </div>
+</div>

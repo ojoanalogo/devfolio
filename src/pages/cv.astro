@@ -1,0 +1,47 @@
+---
+import { Picture } from "astro:assets";
+import profile from "../assets/alf.jpg";
+import WorkItem from "../components/WorkItem.astro";
+import {
+workExperienceData,
+type WorkExperience,
+} from "../data/work-experience";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Sobre mí" navbarActiveItemID="cv">
+  <section aria-label="Sección de información personal pública sobre Alfonso">
+    <div class="flex flex-row justify-between mb-10">
+      <div class="avatar align-center shadow-xl">
+        <div class="w-32 rounded-full ring ring-emerald-500">
+          <Picture
+            widths={[400]}
+            src={profile}
+            alt="Foto del autor del sitio"
+            class="w-full mb-6 shadow-md"
+          />
+        </div>
+      </div>
+      <div class="grow ml-10">
+        <h1 class="md:text-2xl text-xl font-thin text-white drop-shadow-lg">
+          Alfonso Reyes
+        </h1>
+        <p class="text-xs font-bold mt-1 text-amber-400">Ingeniero backend</p>
+        <p class="text-xs mt-2">📍 México</p>
+        <p class="text-xs mt-2">✉️ hola[at]alfon.so</p>
+      </div>
+    </div>
+    <div class="mt-2">
+      <p class="text-md md:text-lg font-black">👨‍💻 Experiencia</p>
+      {
+        workExperienceData.map((workItem: WorkExperience) => (
+          <WorkItem data={workItem} />
+        ))
+      }
+    </div>
+    <div class="mt-2">
+      <p class="text-md md:text-lg font-black">🛠️ Skills</p>
+       Buenos memes
+    </div>
+  </section>
+</BaseLayout>

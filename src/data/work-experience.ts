@@ -50,7 +50,7 @@ export const workExperienceData: Array<WorkExperience> = [
       "Google Cloud",
       "Firebase",
       "Firestore",
-      "Cloud Functions",
+      "Microservicios",
       "TypeScript",
       "Flutter",
       "SendGrid",
