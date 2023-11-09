@@ -1,5 +1,5 @@
 ---
-const { navbarActiveItemID, title } = Astro.props;
+const { navbarActiveItemID } = Astro.props;
 const activeClasses = ["text-emerald-500", "font-black"];
 
 const collections: Array<{
@@ -70,7 +70,7 @@ const collections: Array<{
       target="_self"
       class="py-4 px-8 font-black md:text-md whitespace-nowrap text-zinc-300"
     >
-      {title}
+      alfon.so
     </a>
     {
       collections.map((link) => {
