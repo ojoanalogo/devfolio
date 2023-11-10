@@ -12,21 +12,24 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
 ---
 
 <BaseLayout navbarActiveItemID="home">
-  <section aria-label="Descripción general del sitio y del autor">
+  <section
+    aria-label="Descripción general del sitio y del autor"
+    class="text-sm"
+  >
     <h1 class="md:text-2xl text-xl font-thin mb-6 text-white drop-shadow-lg">
       👋 print('¡Hola mundo!')
     </h1>
-    <p class="mb-4 text-sm">
+    <p class="mb-4">
       Mi nombre es <span class="font-black text-emerald-500">Alfonso Reyes</span
-      > y soy un desarrollador backend y entusiasta de la tecnología. Te doy la
-      bienvenida a mi dominio digital.
+      > y soy un desarrollador backend<br /> y entusiasta de la tecnología. Te
+      doy la bienvenida a mi dominio digital.
     </p>
     <p class="mt-2">
-      De vez en cuando voy a recordar de la existencia de este sitio y voy a
-      escribir algo útil (subjetivo) sobre programación o algo relacionado con
-      tecnología.
+      De vez en cuando voy a recordar de la existencia de<br /> este sitio y voy
+      a escribir algo útil (subjetivo) sobre<br /> programación o algo
+      relacionado con tecnología.
       <br />
-      <div class="my-8">
+      <div class="my-4">
         Aquí hablamos:
         {
           languages.map(
@@ -34,7 +37,7 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
               lang
               // addh over with animation
             ) => (
-              <span class="kbd kbd-md hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem]">{`.${lang}`}</span>
+              <span class="kbd kbd-sm hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem]">{`.${lang}`}</span>
             )
           )
         }
@@ -104,8 +107,8 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
       </ul>
     </div>
   </section>
-  <section aria-label="Lista de publicaciones recientes" class="mt-6">
-    <h2 class="title mb-4 text-xl">Posts</h2>
+  <section aria-label="Lista de publicaciones recientes" class="mt-4">
+    <h2 class="title mb-4 text-md font-bold">Posts</h2>
     <ul class="space-y-4 sm:space-y-2">
       {
         allPostsByDate.map((post) => (
