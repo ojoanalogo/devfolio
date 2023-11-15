@@ -30,8 +30,9 @@ const collections: Array<{
   <nav
     id="navigation-menu"
     aria-label="Main menu"
-    class="flex items-center flex-col md:flex-row content-stretch"
+    class="flex items-center flex-col md:flex-row content-stretch justify-between"
   >
+  <span class="flex">
     <a target="_self" href="/">
       <svg
         version="1.1"
@@ -64,7 +65,6 @@ const collections: Array<{
         </g>
       </svg>
     </a>
-
     <a
       href="/"
       target="_self"
@@ -72,19 +72,22 @@ const collections: Array<{
     >
       alfon.so
     </a>
-    {
-      collections.map((link) => {
-        return (
-          <a
-            href={link.url}
-            id={link.id}
-            class="px-4 py-1 hover:underline rounded-lg"
-          >
-            {link.title}
-          </a>
-        );
-      })
-    }
+  </span>
+    <span class="flex flex-row">
+      {
+        collections.map((link) => {
+          return (
+            <a
+              href={link.url}
+              id={link.id}
+              class="px-4 py-1 hover:underline rounded-lg"
+            >
+              {link.title}
+            </a>
+          );
+        })
+      }
+    </span>
   </nav>
 </header>
 
