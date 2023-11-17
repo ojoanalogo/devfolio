@@ -13,7 +13,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout title="Sobre mí" navbarActiveItemID="cv">
   <section
     aria-label="Sección de información personal pública sobre Alfonso"
-    class="border-0 sm:border-2 sm:border-dashed border-emerald-900 shadow-xl rounded-xl p-4 sm:p-8"
+    class="border-0 sm:border-2 sm:border-dashed border-emerald-900 shadow-xl rounded-xl p-4 sm:p-8 font-sans"
   >
     <div class="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-10">
       <div class="avatar align-center drop-shadow-xl grow-0">
@@ -33,7 +33,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </h1>
         <p class="text-xs font-bold mt-1 text-green-400">Ingeniero backend</p>
         <p class="text-sm mt-2">📍 México</p>
-        <p class="text-sm mt-2">✉️ hola[at]alfon.so</p>
+        <p class="text-sm mt-2 text-zinc-200">✉️ hola[at]alfon.so</p>
+        <p class="text-sm mt-2">🇲🇽 Native | 🇺🇸 Advanced</p>
       </div>
       <div class="mt-4 fill-slate-400">
         <SocialMediaIcons/>
@@ -41,7 +42,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
     <div class="mt-2">
       <h2 class="text-md font-black">🤓 ¿Quién soy?</h2>
-      <p class="text-xs mt-2 text-justify">
+      <p class="text-xs sm:text-sm mt-2 text-justify">
         Como desarrollador backend, mi experiencia se centra en el diseño y
         desarrollo de software, con especial énfasis en tecnologías backend.
         Busco constantemente trabajar con las últimas tecnologías y aprender de

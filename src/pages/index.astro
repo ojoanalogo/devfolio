@@ -18,7 +18,7 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
     class="text-sm"
   >
     <h1 class="md:text-2xl text-xl font-thin mb-6 text-white drop-shadow-lg">
-      👋 print('¡Hola mundo!')
+      👋 <span id="helloWorld">print('¡Hola mundo!')</span>
     </h1>
     <p class="mb-4">
       Mi nombre es <span class="font-black text-emerald-500">Alfonso Reyes</span
@@ -67,3 +67,18 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
     padding: 5rem;
   }
 </style>
+
+<script>
+  function getRandomPhrase() {
+    const phrases = [
+      'console.log("Hello world!")',
+      'print("Hola mundo!")',
+      'System.out.println("Hola mundo!")',
+      'echo "Hola mundo!"',
+      'fmt.Println("Hello world!")',
+    ];
+    return phrases[Math.floor(Math.random() * phrases.length)];
+  }
+  // modify span id helloWorld with message on page load
+  document.getElementById("helloWorld")!.innerHTML = getRandomPhrase();
+</script>
