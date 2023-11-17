@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture } from "astro:assets";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import BaseLayout from "./BaseLayout.astro";
@@ -35,7 +35,7 @@ const displayDate = dayjs(publishDate).format("ll");
         />
       )
     }
-    <h1 class="title my-4 mt-8 text-4xl font-bold text-green-400">{title}</h1>
+    <h1 class="title mt-8 text-4xl font-bold text-white">{title}</h1>
     {publishDate && <time>{displayDate}</time>}
     <br />
     {
@@ -46,10 +46,8 @@ const displayDate = dayjs(publishDate).format("ll");
         </div>
       )
     }
-    <div class="divider my-2 mb-4"></div>
+    <div class="divider my-2"></div>
     <slot class="my-12" />
   </article>
 </BaseLayout>
-
-<style>
-</style>
+<style></style>

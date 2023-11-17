@@ -59,7 +59,7 @@ const isProd = import.meta.env.PROD;
 }
 
 <script>
-  function onKonamiCode(cb) {
+  function onKonamiCode(cb: { (): void; (): any; }) {
   var input = '';
   var key = '38384040373937396665';
   document.addEventListener('keydown', function (e) {
@@ -73,10 +73,8 @@ const isProd = import.meta.env.PROD;
 }
 
 onKonamiCode(function () {
-
   // REDIRECT TO HAPPY PATH
   window.location.href = '/happy';
-
 })
 </script>
 

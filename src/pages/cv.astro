@@ -1,6 +1,7 @@
 ---
 import { Picture } from "astro:assets";
-import profile from "../assets/me.jpg";
+import profile from "../assets/alf.jpg";
+import SocialMediaIcons from '../components/SocialMediaIcons.astro';
 import WorkItem from "../components/WorkItem.astro";
 import {
 workExperienceData,
@@ -14,10 +15,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     aria-label="Sección de información personal pública sobre Alfonso"
     class="border-0 sm:border-2 sm:border-dashed border-emerald-900 shadow-xl rounded-xl p-4 sm:p-8"
   >
-    <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-10">
       <div class="avatar align-center drop-shadow-xl grow-0">
         <div
-          class="w-32 h-32 rounded-full ring ring-emerald-600 shadow-2xl drop-shadow-2xl"
+          class="w-40 h-40 rounded-full ring ring-emerald-600 shadow-2xl drop-shadow-2xl"
         >
           <Picture
             widths={[400]}
@@ -30,9 +31,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h1 class="md:text-2xl text-lg font-bold text-white drop-shadow-lg">
           Alfonso Reyes
         </h1>
-        <p class="text-xs font-bold mt-1 text-emerald-500">Ingeniero backend</p>
+        <p class="text-xs font-bold mt-1 text-green-400">Ingeniero backend</p>
         <p class="text-sm mt-2">📍 México</p>
         <p class="text-sm mt-2">✉️ hola[at]alfon.so</p>
+      </div>
+      <div class="mt-4 fill-slate-400">
+        <SocialMediaIcons/>
       </div>
     </div>
     <div class="mt-2">

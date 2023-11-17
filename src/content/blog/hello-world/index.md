@@ -3,15 +3,9 @@ title: "Hola mundo"
 description: "Primer señal de vida"
 publishDate: 2023-07-29
 published: true
-heroImage: "2001-a-space-odyssey-wallpapers.jpg"
+heroImage: "bluemarble.jpg"
 ---
 
-## Bienvenidos a alfon.so
+Aquí habrá algo interesante
 
-```js
-console.log("hola mundo")
-```
-
-```python
-print("Hello")
-```
+Lo juro
