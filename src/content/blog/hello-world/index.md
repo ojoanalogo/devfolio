@@ -1,11 +1,12 @@
 ---
-title: "Hola mundo"
-description: "Primer señal de vida"
+title: Hola mundo
+description: Primer señal de vida
 publishDate: 2023-07-29
 published: true
-heroImage: "bluemarble.jpg"
+heroImage: bluemarble.jpg
 ---
+# Aquí habrá algo interesante
 
-Aquí habrá algo interesante
+## Lo juro
 
-Lo juro
+### Por mis barbas
