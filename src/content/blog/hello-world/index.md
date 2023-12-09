@@ -1,7 +1,7 @@
 ---
+publishDate: 2023-07-29
 title: Hola mundo
 description: Primer señal de vida
-publishDate: 2023-07-29
 published: true
 heroImage: bluemarble.jpg
 ---
@@ -10,3 +10,7 @@ heroImage: bluemarble.jpg
 ## Lo juro
 
 ### Por mis barbas
+
+
+
+Publicado desde el CMS interno
