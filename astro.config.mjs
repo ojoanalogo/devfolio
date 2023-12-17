@@ -11,6 +11,7 @@ export default defineConfig({
     sitemap(),
     tailwind(),
     NetlifyCMS({
+      disableIdentityWidgetInjection: true,
       config: {
         backend: {
           name: "git-gateway",
