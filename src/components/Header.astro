@@ -1,12 +1,13 @@
 ---
 const { navbarActiveItemID } = Astro.props;
-const activeClasses = ["text-emerald-500", "font-black"];
+const activeClasses = ["text-cyan-500", "font-black"];
 
 const collections: Array<{
   title: string;
-  id: string;
-  url: string;
+  id?: string;
+  url?: string;
   new?: boolean;
+  redirect?: string;
 }> = [
   {
     title: "index.html",
@@ -14,15 +15,19 @@ const collections: Array<{
     url: "/",
   },
   {
-    title: "cv.ts",
-    id: "cv",
-    url: "/cv",
+    title: "about.ts",
+    id: "about",
+    url: "/about",
   },
   {
-    title: "blog.js",
+    title: "blog.sql",
     id: "blog",
     url: "/blog",
   },
+  {
+    title: "photos.jpg",
+    redirect: "https://ojoanalogo.com"
+  }
 ];
 ---
 
@@ -68,7 +73,7 @@ const collections: Array<{
     <a
       href="/"
       target="_self"
-      class="py-4 px-8 font-black md:text-md whitespace-nowrap text-zinc-300 hover:text-emerald-400 duration-200"
+      class="py-4 px-8 font-black md:text-md whitespace-nowrap text-zinc-300 hover:text-cyan-400 duration-200"
     >
       alfon.so
     </a>
@@ -78,7 +83,8 @@ const collections: Array<{
         collections.map((link) => {
           return (
             <a
-              href={link.url}
+              href={link.redirect ? link.redirect : link.url}
+              target={link.redirect ? "_blank" : "_self"}
               id={link.id}
               class="px-4 py-1 hover:underline rounded-lg"
             >
