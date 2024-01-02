@@ -21,62 +21,72 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
       👋 <span id="helloWorld">print('¡Hola mundo!')</span>
     </h1>
     <p class="mb-4">
-      Mi nombre es <span class="font-black text-cyan-500">Alfonso Reyes</span
-      > y te doy la bienvenida a mi sitio web personal.
-    <p class="mt-2">
-      De vez en cuando voy a recordar de la existencia de este sitio y voy a
-      escribir algo útil (subjetivo) sobre programación o algo relacionado con
-      tecnología.
-      <br />
-      <div class="my-4">
-        Aquí hablamos:
-        {
-          languages.map(
-            (
-              lang
-              // addh over with animation
-            ) => (
-              <span class="kbd kbd-sm hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem]">{`.${lang}`}</span>
+      Mi nombre es <span class="font-black text-cyan-500">Alfonso Reyes</span> y
+      te doy la bienvenida a mi sitio web personal.
+      <p class="mt-2">
+        De vez en cuando voy a recordar de la existencia de este sitio y voy a
+        escribir algo útil (subjetivo) sobre programación o algo relacionado con
+        tecnología.
+        <br />
+        <p class="my-4">
+          De igual manera, te invito a qué le eches un vistazo a mi sitio de <a
+            class="font-bold text-cyan-400"
+            target="_blank"
+            href="https://ojoanalogo.com">fotografía</a
+          >
+        </p>
+        <p class="my-4">
+          Aquí hablamos:
+          {
+            languages.map(
+              (
+                lang
+                // addh over with animation
+              ) => (
+                <span class="kbd kbd-sm hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem]">{`.${lang}`}</span>
+              )
             )
-          )
-        }
-      </div>
+          }
+        </p>
+        <div
+          class="mt-4 flex flex-wrap items-center gap-x-4 sm:items-center fill-slate-400"
+        >
+          <SocialMediaIcons />
+        </div>
+      </p>
+      <section aria-label="Lista de publicaciones recientes" class="mt-4">
+        <h2 class="title mb-4 text-md font-bold">Posts</h2>
+        <ul class="space-y-4 sm:space-y-2">
+          {
+            allPostsByDate.map((post) => (
+              <li class="flex flex-col gap-x-2 sm:flex-row">
+                <PostPreview post={post} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
     </p>
-    <div class="mt-4 flex flex-wrap items-center gap-x-4 sm:items-center fill-slate-400">
-      <SocialMediaIcons />
-    </div>
-  </section>
-  <section aria-label="Lista de publicaciones recientes" class="mt-4">
-    <h2 class="title mb-4 text-md font-bold">Posts</h2>
-    <ul class="space-y-4 sm:space-y-2">
-      {
-        allPostsByDate.map((post) => (
-          <li class="flex flex-col gap-x-2 sm:flex-row">
-            <PostPreview post={post} />
-          </li>
-        ))
+
+    <style>
+      .astro-code {
+        padding: 5rem;
       }
-    </ul>
+    </style>
+
+    <script>
+      function getRandomPhrase() {
+        const phrases = [
+          'console.log("Hello world!")',
+          'print("Hola mundo!")',
+          'System.out.println("Hola mundo!")',
+          'echo "Hola mundo!"',
+          'fmt.Println("Hello world!")',
+        ];
+        return phrases[Math.floor(Math.random() * phrases.length)];
+      }
+      // modify span id helloWorld with message on page load
+      document.getElementById("helloWorld")!.innerHTML = getRandomPhrase();
+    </script>
   </section>
 </BaseLayout>
-
-<style>
-  .astro-code {
-    padding: 5rem;
-  }
-</style>
-
-<script>
-  function getRandomPhrase() {
-    const phrases = [
-      'console.log("Hello world!")',
-      'print("Hola mundo!")',
-      'System.out.println("Hola mundo!")',
-      'echo "Hola mundo!"',
-      'fmt.Println("Hello world!")',
-    ];
-    return phrases[Math.floor(Math.random() * phrases.length)];
-  }
-  // modify span id helloWorld with message on page load
-  document.getElementById("helloWorld")!.innerHTML = getRandomPhrase();
-</script>
