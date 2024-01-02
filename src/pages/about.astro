@@ -1,61 +1,64 @@
 ---
 import { Picture } from "astro:assets";
 import profile from "../assets/alf.jpg";
-import SocialMediaIcons from '../components/SocialMediaIcons.astro';
-import WorkItem from '../components/WorkItem.astro';
-import { workExperienceData, type WorkExperience } from '../data/work-experience';
+import SocialMediaIcons from "../components/SocialMediaIcons.astro";
+import WorkItem from "../components/WorkItem.astro";
+import {
+workExperienceData,
+type WorkExperience,
+} from "../data/work-experience";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Sobre mí" navbarActiveItemID="about">
-  <section
-    aria-label="Sección de información personal pública sobre Alfonso"
-    class="border-0 shadow-xl rounded-xl p-4 sm:p-8 font-sans bg-zinc-900 text-white"
-  >
-    <div class="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-10">
-      <div class="avatar align-center drop-shadow-xl grow-0">
-        <div
-          class="w-40 h-40 rounded-full ring ring-cyan-950"
-        >
-          <Picture
-            widths={[400]}
-            src={profile}
-            alt="Foto del autor del sitio"
-          />
+  <section aria-label="Sección de información personal pública sobre Alfonso">
+    <div
+      class="border-0 shadow-xl rounded-xl p-4 sm:p-8 font-sans bg-zinc-900 text-white"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-10"
+      >
+        <div class="avatar align-center drop-shadow-xl grow-0">
+          <div class="w-40 h-40 rounded-full ring ring-cyan-950">
+            <Picture
+              widths={[400]}
+              src={profile}
+              alt="Foto del autor del sitio"
+            />
+          </div>
+        </div>
+        <div class="grow md:ml-10 mt-5 md:mt-0 align-middle">
+          <h1 class="md:text-2xl text-lg font-bold text-white">
+            Alfonso Reyes
+          </h1>
+          <p class="text-xs font-bold mt-1 text-cyan-600">Ingeniero backend</p>
+          <p class="text-sm mt-2">📍 México</p>
+          <p class="text-sm mt-2 text-zinc-200">✉️ hola[at]alfon.so</p>
+          <p class="text-sm mt-2">🇲🇽 Native | 🇺🇸 Advanced</p>
+        </div>
+        <div class="mt-4 fill-slate-400">
+          <SocialMediaIcons />
         </div>
       </div>
-      <div class="grow md:ml-10 mt-5 md:mt-0 align-middle">
-        <h1 class="md:text-2xl text-lg font-bold text-white">
-          Alfonso Reyes
-        </h1>
-        <p class="text-xs font-bold mt-1 text-cyan-600">Ingeniero backend</p>
-        <p class="text-sm mt-2">📍 México</p>
-        <p class="text-sm mt-2 text-zinc-200">✉️ hola[at]alfon.so</p>
-        <p class="text-sm mt-2">🇲🇽 Native | 🇺🇸 Advanced</p>
-      </div>
-      <div class="mt-4 fill-slate-400">
-        <SocialMediaIcons/>
+      <div class="mt-2">
+        <h2 class="text-md font-black">🤓 ¿Quién soy?</h2>
+        <p class="text-md mt-2 text-justify">
+          🚧 Sección en construcción
+        </p>
       </div>
     </div>
-    <div class="mt-2">
-      <h2 class="text-md font-black">🤓 ¿Quién soy?</h2>
-      <p class="text-md mt-2 text-justify">
-        Apartado en construcción
-      </p>
-    </div>
+  </section>
+  <div class="p-4 sm:p-8">
+    <h2 class="text-md font-black">👨‍💻 Experiencia</h2>
+    {
+      workExperienceData.map((workItem: WorkExperience) => (
+        <WorkItem data={workItem} />
+      ))
+    }
+  </div>
 
-    <div class="mt-8">
-      <h2 class="text-md font-black">👨‍💻 Experiencia</h2>
-      {
-        workExperienceData.map((workItem: WorkExperience) => (
-          <WorkItem data={workItem} />
-        ))
-      }
-    </div>
-
-    <!--     <div class="mt-2">
+  <!--     <div class="mt-2">
       <p class="text-md md:text-lg font-black">🛠️ Fortalezas</p>
       
     </div> -->
-  </section>
 </BaseLayout>
