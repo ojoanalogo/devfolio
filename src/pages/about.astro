@@ -2,13 +2,15 @@
 import { Picture } from "astro:assets";
 import profile from "../assets/alf.jpg";
 import SocialMediaIcons from '../components/SocialMediaIcons.astro';
+import WorkItem from '../components/WorkItem.astro';
+import { workExperienceData, type WorkExperience } from '../data/work-experience';
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Sobre mí" navbarActiveItemID="about">
   <section
     aria-label="Sección de información personal pública sobre Alfonso"
-    class="border-0 shadow-xl rounded-xl p-4 sm:p-8 font-sans bg-slate-900 text-white"
+    class="border-0 shadow-xl rounded-xl p-4 sm:p-8 font-sans bg-zinc-900 text-white"
   >
     <div class="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-10">
       <div class="avatar align-center drop-shadow-xl grow-0">
@@ -40,6 +42,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p class="text-md mt-2 text-justify">
         Apartado en construcción
       </p>
+    </div>
+
+    <div class="mt-8">
+      <h2 class="text-md font-black">👨‍💻 Experiencia</h2>
+      {
+        workExperienceData.map((workItem: WorkExperience) => (
+          <WorkItem data={workItem} />
+        ))
+      }
     </div>
 
     <!--     <div class="mt-2">
