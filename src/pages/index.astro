@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import PostPreview from "../components/PostPreview.astro";
 import SocialMediaIcons from "../components/SocialMediaIcons.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from '../components/ProjectCard.astro'
 import { sortMDByDate } from "../utils";
 import { Picture } from "astro:assets";
 import profile from "../assets/alf.jpg";
@@ -11,6 +12,27 @@ const MAX_POSTS = 10;
 const allPosts = await getCollection("blog");
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 const languages = ["js", "ts", "python", "sql", "dart", "go"];
+
+const projects: Array<{
+  title: string;
+  description: string;
+  link: string;
+  icon: string;
+}> = [
+  {
+    title: 'Don Dinero',
+    description: 'Finanzas personales a un hola de distancia',
+    link: 'https://molecula.digital/dondinero',
+    icon: "💵"
+  },
+  {
+    title: "Wawa",
+    description: "Framework para construir flujos conversacionales en WhatsApp [Próximamente]",
+    icon: "💬",
+    link: ""
+  }
+]
+
 ---
 
 <BaseLayout navbarActiveItemID="home">
@@ -21,7 +43,7 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
     <div
       class="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-8"
     >
-      <div class="avatar align-center drop-shadow-xl grow-0">
+      <div class="avatar drop-shadow-xl grow-0">
         <div class="w-40 h-40 rounded-full">
           <Picture
             widths={[400]}
@@ -30,7 +52,7 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
           />
         </div>
       </div>
-      <div class="grow md:ml-10 mt-5 md:mt-0">
+      <div class="grow w-full md:ml-10 mt-5 md:mt-0">
         <p class="text-lg md:text-md font-bold mb-6 drop-shadow-lg">
           👋 <span id="helloWorld">print('¡Hola mundo!')</span>
         </p>
@@ -38,23 +60,19 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
         <h1 class="mt-2 text-4xl md:text-5xl font-bold text-white">
           Alfonso <span class="text-yellow-500">Reyes</span>
         </h1>
-
-        <div class="md:w-8/12 text-justify">
+        <div class="w-full md:w-8/12 text-justify">
           <p class="mt-4">
             Soy un ingeniero <span class="font-black text-yellow-300"
               >backend</span
             > y fotógrafo de México.
             <br />
-            Me apasiona la tecnología y construir cosas útiles.
-          </p>
-          <p class="mt-2">
-            Trabajo en <a
+            Me apasiona la tecnología y construir cosas útiles. Trabajo en <a
               target="_blank"
               class="font-bold"
               href="https://monopolio.com.mx">monopolio.com.mx</a
             > y en mis tiempos libres estoy desarrollando <a
               target="_blank"
-              class="text-green-200 font-bold underline underline-offset-2"
+              class="font-bold underline underline-offset-2"
               href="https://molecula.digital/dondinero">Don Dinero</a
             >, un bot de mensajeria para ayudar a las personas a sanar su
             relación con el dinero.
@@ -109,6 +127,22 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
         }
       </ul>
     </section>
+
+    <section aria-label="Side projects" class="mt-4">
+      <h2 class="title mb-4 text-md font-bold">Projectos</h2>
+      <div class="grid grid-cols-2 auto-rows-fr gap-4">
+        {
+          projects.map((project) => (
+          <ProjectCard description={project.description}
+            icon={project.icon}
+            title={project.title}
+            link={project.link}
+          ></ProjectCard>
+          ))
+        }
+      </div>
+    </section>
+
     <script>
       function getRandomPhrase() {
         const phrases = [

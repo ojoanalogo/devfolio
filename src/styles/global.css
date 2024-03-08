@@ -37,6 +37,6 @@ noise {
   background: repeat center center url('/noise.svg');
   background-size: auto;
   background-size: 24%;
-  opacity: .4;
+  opacity: .5;
   mix-blend-mode: luminosity;
 }
