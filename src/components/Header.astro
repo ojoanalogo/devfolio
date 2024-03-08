@@ -1,6 +1,6 @@
 ---
 const { navbarActiveItemID } = Astro.props;
-const activeClasses = ["text-cyan-200", "font-black"];
+const activeClasses = ["text-yellow-200", "font-black"];
 
 const collections: Array<{
   title: string;
@@ -13,11 +13,6 @@ const collections: Array<{
     title: "🏠 index.html",
     id: "home",
     url: "/",
-  },
-  {
-    title: "🧍 about.ts",
-    id: "about",
-    url: "/about",
   },
   {
     title: "✍️ blog.sql",
@@ -37,7 +32,7 @@ const collections: Array<{
     aria-label="Main menu"
     class="flex flex-col items-center lg:flex-row content-stretch justify-between"
   >
-  <span class="flex flex-col items-center sm:flex-row">
+  <span class="flex flex-row items-center">
     <a target="_self" href="/">
       <svg
         version="1.1"
@@ -78,7 +73,7 @@ const collections: Array<{
       alfon.so
     </a>
   </span>
-    <span class="flex flex-wrap lg:flex-nowrap md:flex-row bg-neutral-900 drop-shadow-md p-2 sm:p-0 rounded-lg sm:bg-transparent">
+    <span class="flex flex-wrap lg:flex-nowrap md:flex-row bg-neutral-900 drop-shadow-md p-2 rounded-lg">
       {
         collections.map((link) => {
           return (

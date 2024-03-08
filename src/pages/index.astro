@@ -4,11 +4,17 @@ import PostPreview from "../components/PostPreview.astro";
 import SocialMediaIcons from "../components/SocialMediaIcons.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { sortMDByDate } from "../utils";
+import { Picture } from "astro:assets";
+import profile from "../assets/alf.jpg";
 
 const MAX_POSTS = 10;
 const allPosts = await getCollection("blog");
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
-
+import WorkItem from "../components/WorkItem.astro";
+import {
+  workExperienceData,
+  type WorkExperience,
+} from "../data/work-experience";
 const languages = ["js", "ts", "python", "sql", "dart", "go"];
 ---
 
@@ -17,73 +23,85 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
     aria-label="Descripción general del sitio y del autor"
     class="text-sm"
   >
-    <h1 class="md:text-3xl text-xl font-bold mb-6 drop-shadow-lg">
-      👋 <span id="helloWorld">print('¡Hola mundo!')</span>
-    </h1>
-    <p class="mb-4">
-      Mi nombre es <span class="font-black text-cyan-500">Alfonso Reyes</span> y
-      te doy la bienvenida a mi sitio web personal.
-      <p class="mt-2">
-        De vez en cuando voy a recordar de la existencia de este sitio y voy a
-        escribir algo útil (subjetivo) sobre programación o algo relacionado con
-        tecnología.
-        <br />
-        Puedes navegar por el sitio usando la barra de navegación en la parte
-        superior de la página.
-        <p class="my-4">
-          De igual manera, te invito a qué le des un vistazo a mi sitio de <a
-            class="font-bold text-cyan-400"
-            target="_blank"
-            href="https://ojoanalogo.com">fotografía</a
-          >.
-        </p>
-        <p class="my-4">
-          Aquí hablamos:
-          {
-            languages.map(
-              (
-                lang
-                // add hover with animation
-              ) => (
-                <span class="kbd kbd-sm hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem]">{`.${lang}`}</span>
-              )
-            )
-          }
-        </p>
-        <div
-          class="mt-4 flex flex-wrap items-center gap-x-4 sm:items-center fill-slate-400"
-        >
-          <SocialMediaIcons />
+    <div
+      class="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-10"
+    >
+      <div class="avatar align-center drop-shadow-xl grow-0">
+        <div class="w-40 h-40 rounded-full">
+          <Picture
+            widths={[400]}
+            src={profile}
+            alt="Foto del autor del sitio"
+          />
         </div>
-      </p>
-      <section aria-label="Lista de publicaciones recientes" class="mt-4">
-        <h2 class="title mb-4 text-md font-bold">Posts</h2>
-        <ul class="space-y-4 sm:space-y-2">
-          {
-            allPostsByDate.map((post) => (
-              <li class="flex flex-col gap-x-2 sm:flex-row">
-                <PostPreview post={post} />
-              </li>
-            ))
-          }
-        </ul>
-      </section>
+      </div>
+      <div class="grow md:ml-10 mt-5 md:mt-0">
+        <p class="text-lg md:text-md font-bold mb-6 drop-shadow-lg">
+          👋 <span id="helloWorld">print('¡Hola mundo!')</span>
+        </p>
+        <p class="text-xs md:text-xs">Mi nombre es</p>
+        <h1 class="mt-2 text-4xl md:text-5xl font-bold text-white">Alfonso <span class="text-yellow-500">Reyes</span></h1>
+        <p class="mt-4">
+          Soy un ingeniero <span class="font-black text-yellow-300">backend</span> y fotógrafo de México. Me apasiona la tecnología y construir
+          cosas útiles.
+        </p>
+      </div>
+    </div>
+    <p class="mt-2">
+      De vez en cuando voy a recordar de la existencia de este sitio y voy a
+      escribir algo útil (subjetivo) sobre programación o algo relacionado con
+      tecnología.
+      <br />
+      Puedes navegar por el sitio usando la barra de navegación en la parte superior
+      de la página.
+    </p>
+    <p class="my-4">
+      De igual manera, te invito a qué le des un vistazo a mi sitio de <a
+        class="font-bold text-yellow-300"
+        target="_blank"
+        href="https://ojoanalogo.com">fotografía</a
+      >.
     </p>
 
-    <style>
-      .astro-code {
-        padding: 5rem;
+    <p class="my-4">
+      Aquí hablamos:
+      {
+        languages.map(
+          (
+            lang,
+            // add hover with animation
+          ) => (
+            <span class="kbd kbd-sm hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem]">{`.${lang}`}</span>
+          ),
+        )
       }
-    </style>
-
+    </p>
+    <div
+      class="mt-4 flex flex-wrap items-center gap-x-4 sm:items-center fill-slate-400"
+    >
+    <p class="text-sm">Mis redes:</p>
+      <SocialMediaIcons />
+    </div>
+    <section aria-label="Lista de publicaciones recientes" class="mt-4">
+      <h2 class="title mb-4 text-md font-bold">Posts</h2>
+      <ul class="space-y-4 sm:space-y-2">
+        {
+          allPostsByDate.map((post) => (
+            <li class="flex flex-col gap-x-2 sm:flex-row">
+              <PostPreview post={post} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
     <script>
       function getRandomPhrase() {
         const phrases = [
-          'console.log("Hello world!")',
-          'print("Hola mundo!")',
-          'System.out.println("Hola mundo!")',
-          'echo "Hola mundo!"',
-          'fmt.Println("Hello world!")',
+          'console.log("¡Hola mundo!")',
+          'print("¡Hola mundo!")',
+          'System.out.println("¡Hola mundo!")',
+          'echo "¡Hola mundo!"',
+          'fmt.Println("¡Hola mundo!")',
         ];
         return phrases[Math.floor(Math.random() * phrases.length)];
       }
