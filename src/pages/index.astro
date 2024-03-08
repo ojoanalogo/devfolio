@@ -10,11 +10,6 @@ import profile from "../assets/alf.jpg";
 const MAX_POSTS = 10;
 const allPosts = await getCollection("blog");
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
-import WorkItem from "../components/WorkItem.astro";
-import {
-  workExperienceData,
-  type WorkExperience,
-} from "../data/work-experience";
 const languages = ["js", "ts", "python", "sql", "dart", "go"];
 ---
 
@@ -24,7 +19,7 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
     class="text-sm"
   >
     <div
-      class="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-10"
+      class="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-8"
     >
       <div class="avatar align-center drop-shadow-xl grow-0">
         <div class="w-40 h-40 rounded-full">
@@ -40,14 +35,34 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
           👋 <span id="helloWorld">print('¡Hola mundo!')</span>
         </p>
         <p class="text-xs md:text-xs">Mi nombre es</p>
-        <h1 class="mt-2 text-4xl md:text-5xl font-bold text-white">Alfonso <span class="text-yellow-500">Reyes</span></h1>
-        <p class="mt-4">
-          Soy un ingeniero <span class="font-black text-yellow-300">backend</span> y fotógrafo de México. Me apasiona la tecnología y construir
-          cosas útiles.
-        </p>
+        <h1 class="mt-2 text-4xl md:text-5xl font-bold text-white">
+          Alfonso <span class="text-yellow-500">Reyes</span>
+        </h1>
+
+        <div class="md:w-8/12 text-justify">
+          <p class="mt-4">
+            Soy un ingeniero <span class="font-black text-yellow-300"
+              >backend</span
+            > y fotógrafo de México.
+            <br />
+            Me apasiona la tecnología y construir cosas útiles.
+          </p>
+          <p class="mt-2">
+            Trabajo en <a
+              target="_blank"
+              class="font-bold"
+              href="https://monopolio.com.mx">monopolio.com.mx</a
+            > y en mis tiempos libres estoy desarrollando <a
+              target="_blank"
+              class="text-green-200 font-bold underline underline-offset-2"
+              href="https://molecula.digital/dondinero">Don Dinero</a
+            >, un bot de mensajeria para ayudar a las personas a sanar su
+            relación con el dinero.
+          </p>
+        </div>
       </div>
     </div>
-    <p class="mt-2">
+    <p>
       De vez en cuando voy a recordar de la existencia de este sitio y voy a
       escribir algo útil (subjetivo) sobre programación o algo relacionado con
       tecnología.
@@ -79,7 +94,7 @@ const languages = ["js", "ts", "python", "sql", "dart", "go"];
     <div
       class="mt-4 flex flex-wrap items-center gap-x-4 sm:items-center fill-slate-400"
     >
-    <p class="text-sm">Mis redes:</p>
+      <p class="text-sm">Mis redes:</p>
       <SocialMediaIcons />
     </div>
     <section aria-label="Lista de publicaciones recientes" class="mt-4">
