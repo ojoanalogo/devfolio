@@ -60,7 +60,7 @@ const projects: Array<{
         <h1 class="mt-2 text-4xl md:text-5xl font-bold text-white">
           Alfonso <span class="text-yellow-500">Reyes</span>
         </h1>
-        <div class="w-full md:w-8/12 text-justify">
+        <div class="w-full md:w-10/12 lg:w-10/12 text-justify">
           <p class="mt-4">
             Soy un ingeniero <span class="font-black text-yellow-300"
               >backend</span
@@ -115,8 +115,8 @@ const projects: Array<{
       <p class="text-sm">Mis redes:</p>
       <SocialMediaIcons />
     </div>
-    <section aria-label="Lista de publicaciones recientes" class="mt-4">
-      <h2 class="title mb-4 text-md font-bold">Posts</h2>
+    <section aria-label="Lista de publicaciones recientes" class="mt-8">
+      <h2 class="title mb-4 text-sm font-bold underline underline-offset-8 decoration-yellow-600 decoration-2">✍️ Publicaciones recientes</h2>
       <ul class="space-y-4 sm:space-y-2">
         {
           allPostsByDate.map((post) => (
@@ -129,8 +129,8 @@ const projects: Array<{
     </section>
 
     <section aria-label="Side projects" class="mt-4">
-      <h2 class="title mb-4 text-md font-bold">Projectos</h2>
-      <div class="grid grid-cols-2 auto-rows-fr gap-4">
+      <h2 class="title mb-4 text-sm font-bold underline underline-offset-8 decoration-yellow-600 decoration-2">🔧 Proyectos</h2>
+      <div class="grid sm:grid-cols-2 sm:auto-rows-fr auto-cols-fr gap-4">
         {
           projects.map((project) => (
           <ProjectCard description={project.description}
