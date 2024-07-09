@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import PostPreview from "../components/PostPreview.astro";
 import SocialMediaIcons from "../components/SocialMediaIcons.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ProjectCard from '../components/ProjectCard.astro'
+import ProjectCard from "../components/ProjectCard.astro";
 import { sortMDByDate } from "../utils";
 import { Picture } from "astro:assets";
 import profile from "../assets/alf.jpg";
@@ -20,19 +20,19 @@ const projects: Array<{
   icon: string;
 }> = [
   {
-    title: 'Mony',
-    description: 'Finanzas personales a un hola de distancia',
-    link: 'https://heymony.com',
-    icon: "🐄"
+    title: "Mony",
+    description: "Finanzas personales a un hola de distancia",
+    link: "https://heymony.com",
+    icon: "🐄",
   },
   {
     title: "Wawa",
-    description: "Framework para construir flujos conversacionales en WhatsApp [Próximamente]",
+    description:
+      "Framework para construir flujos conversacionales en WhatsApp [Próximamente]",
     icon: "💬",
-    link: ""
-  }
-]
-
+    link: "",
+  },
+];
 ---
 
 <BaseLayout navbarActiveItemID="home">
@@ -57,105 +57,107 @@ const projects: Array<{
           👋 <span id="helloWorld">print('¡Hola mundo!')</span>
         </p>
         <p class="text-xs md:text-xs">Mi nombre es</p>
-        <h1 class="mt-2 text-4xl md:text-5xl font-bold text-white">
-          Alfonso <span class="text-yellow-500">Reyes</span>
+        <h1 class="mt-2 text-4xl md:text-5xl font-medium text-white">
+          Alfonso <span class="text-green-500 font-black">Reyes</span>
         </h1>
         <div class="w-full md:w-10/12 lg:w-10/12 text-justify">
           <p class="mt-4">
-            Soy un ingeniero <span class="font-black text-yellow-300"
+            Soy un ingeniero <span class="font-black text-green-400"
               >backend</span
-            > y fotógrafo de México.
-            <br />
-            Me apasiona la tecnología y construir cosas útiles. Trabajo en <a
+            > y fotógrafo de México. Me apasiona la tecnología y construir cosas
+            útiles. Trabajo como ingeniero backend en <a
               target="_blank"
-              class="font-bold text-sky-400"
+              class="font-bold"
               href="https://monopolio.com.mx">monopolio.com.mx</a
-            > y en mis tiempos libres estoy desarrollando <a
+            > y en mis tiempos libres estoy construyendo a <a
               target="_blank"
-              class="font-bold text-purple-300"
+              class="font-bold"
               href="https://heymony.com">Mony</a
-            >, un bot para ayudar a las personas a sanar su
-            relación con el dinero.
+            >, un bot para ayudar a las personas a sanar su relación con el
+            dinero.
+          </p>
+          <p class="mt-4">
+            De vez en cuando voy a recordar de la existencia de este sitio y voy
+            a escribir algo útil (subjetivo) sobre programación o algo
+            relacionado con tecnología. Si quieres ver algo más interesante dale
+            un vistazo a mi sitio de <a
+              class="font-bold text-green-400"
+              target="_blank"
+              href="https://ojoanalogo.com">fotografía</a
+            >.
           </p>
         </div>
       </div>
     </div>
-    <p>
-      De vez en cuando voy a recordar de la existencia de este sitio y voy a
-      escribir algo útil (subjetivo) sobre programación o algo relacionado con
-      tecnología.
-      <br />
-      Puedes navegar por el sitio usando la barra de navegación en la parte superior
-      de la página.
-    </p>
-    <p class="my-4">
-      De igual manera, te invito a qué le des un vistazo a mi sitio de <a
-        class="font-bold text-yellow-300"
-        target="_blank"
-        href="https://ojoanalogo.com">fotografía</a
-      >.
-    </p>
-
-    <p class="my-4">
-      Aquí hablamos:
-      {
-        languages.map(
-          (
-            lang,
-            // add hover with animation
-          ) => (
-            <span class="kbd kbd-sm hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem]">{`.${lang}`}</span>
-          ),
-        )
-      }
-    </p>
-    <div
-      class="mt-4 flex flex-wrap items-center gap-x-4 sm:items-center fill-slate-400"
+  </section>
+  <p class="my-4">
+    Aquí hablamos:
+    {
+      languages.map(
+        (
+          lang,
+          // add hover with animation
+        ) => (
+          <span class="kbd kbd-sm hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem]">{`.${lang}`}</span>
+        ),
+      )
+    }
+  </p>
+  <div
+    class="mt-4 flex flex-wrap items-center gap-x-4 sm:items-center fill-slate-400"
+  >
+    <p class="text-sm">Mis redes:</p>
+    <SocialMediaIcons />
+  </div>
+  <section aria-label="Lista de publicaciones recientes" class="mt-8">
+    <h2
+      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-green-600 decoration-2"
     >
-      <p class="text-sm">Mis redes:</p>
-      <SocialMediaIcons />
-    </div>
-    <section aria-label="Lista de publicaciones recientes" class="mt-8">
-      <h2 class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-yellow-600 decoration-2">✍️ Publicaciones recientes</h2>
-      <ul class="space-y-4 sm:space-y-2">
-        {
-          allPostsByDate.map((post) => (
-            <li class="flex flex-col gap-x-2 sm:flex-row">
-              <PostPreview post={post} />
-            </li>
-          ))
-        }
-      </ul>
-    </section>
+      ✍️ Publicaciones recientes
+    </h2>
+    <ul class="space-y-4 sm:space-y-2">
+      {
+        allPostsByDate.map((post) => (
+          <li class="flex flex-col gap-x-2 sm:flex-row">
+            <PostPreview post={post} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
-    <section aria-label="Side projects" class="mt-4">
-      <h2 class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-yellow-600 decoration-2">🔧 Proyectos</h2>
-      <div class="grid sm:grid-cols-2 sm:auto-rows-fr auto-cols-fr gap-4">
-        {
-          projects.map((project) => (
-          <ProjectCard description={project.description}
+  <section aria-label="Side projects" class="mt-4">
+    <h2
+      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-green-600 decoration-2"
+    >
+      🔧 Proyectos
+    </h2>
+    <div class="grid sm:grid-cols-2 sm:auto-rows-fr auto-cols-fr gap-4">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            description={project.description}
             icon={project.icon}
             title={project.title}
             link={project.link}
-          ></ProjectCard>
-          ))
-        }
-      </div>
-    </section>
-
-    <script>
-      function getRandomPhrase() {
-        const phrases = [
-          'console.log("¡Hola mundo!")',
-          'print("¡Hola mundo!")',
-          'System.out.println("¡Hola mundo!")',
-          'echo "¡Hola mundo!"',
-          'fmt.Println("¡Hola mundo!")',
-        ];
-        return phrases[Math.floor(Math.random() * phrases.length)];
+          />
+        ))
       }
-      // modify span id helloWorld with message on page load
-      document.getElementById("helloWorld")!.innerHTML = getRandomPhrase();
-    </script>
+    </div>
   </section>
+
+  <script>
+    function getRandomPhrase() {
+      const phrases = [
+        'console.log("¡Hola mundo!")',
+        'print("¡Hola mundo!")',
+        'System.out.println("¡Hola mundo!")',
+        'echo "¡Hola mundo!"',
+        'fmt.Println("¡Hola mundo!")',
+      ];
+      return phrases[Math.floor(Math.random() * phrases.length)];
+    }
+    // modify span id helloWorld with message on page load
+    document.getElementById("helloWorld")!.innerHTML = getRandomPhrase();
+  </script>
 </BaseLayout>
