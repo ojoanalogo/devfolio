@@ -6,7 +6,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import { sortMDByDate } from "../utils";
 import { Picture } from "astro:assets";
-import profile from "../assets/alf.jpg";
+import profile from "../assets/me.png";
 
 const MAX_POSTS = 10;
 const allPosts = await getCollection("blog");
@@ -58,14 +58,16 @@ const projects: Array<{
         </p>
         <p class="text-xs md:text-xs">Mi nombre es</p>
         <h1 class="mt-2 text-4xl md:text-5xl font-medium text-white">
-          Alfonso <span class="text-green-500 font-black">Reyes</span>
+          Alfonso <span class="text-emerald-400 font-black">Reyes</span>
         </h1>
         <div class="w-full md:w-10/12 lg:w-10/12 text-justify">
           <p class="mt-4">
-            Soy un ingeniero <span class="font-black text-green-400"
-              >backend</span
-            > y fotógrafo de México. Me apasiona la tecnología y construir cosas
-            útiles. Trabajo como ingeniero backend en <a
+            Soy un ingeniero <span class="font-black">backend</span> y <span
+              class="font-black">fotógrafo</span
+            > de México. Me apasiona la tecnología y construir cosas útiles.
+          </p>
+          <p class="mt-4">
+            Trabajo como ingeniero backend en <a
               target="_blank"
               class="font-bold"
               href="https://monopolio.com.mx">monopolio.com.mx</a
@@ -73,18 +75,26 @@ const projects: Array<{
               target="_blank"
               class="font-bold"
               href="https://heymony.com">Mony</a
-            >, un bot para ayudar a las personas a sanar su relación con el
+            >, un bot con asistencia de IA para ayudar a las personas a que
+            tomen mejores decisiones financieras y sanen su relación con el
             dinero.
           </p>
+
           <p class="mt-4">
             De vez en cuando voy a recordar de la existencia de este sitio y voy
             a escribir algo útil (subjetivo) sobre programación o algo
             relacionado con tecnología. Si quieres ver algo más interesante dale
             un vistazo a mi sitio de <a
-              class="font-bold text-green-400"
+              class="font-bold text-emerald-400"
               target="_blank"
               href="https://ojoanalogo.com">fotografía</a
             >.
+          </p>
+          <p class="mt-4">
+            Puedes contactarme en <a
+              class="font-black text-emerald-300"
+              href="mailto:hola@alfon.so"
+              >mi correo</a>
           </p>
         </div>
       </div>
@@ -111,7 +121,7 @@ const projects: Array<{
   </div>
   <section aria-label="Lista de publicaciones recientes" class="mt-8">
     <h2
-      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-green-600 decoration-2"
+      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-emerald-600 decoration-2"
     >
       ✍️ Publicaciones recientes
     </h2>
@@ -128,7 +138,7 @@ const projects: Array<{
 
   <section aria-label="Side projects" class="mt-4">
     <h2
-      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-green-600 decoration-2"
+      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-emerald-600 decoration-2"
     >
       🔧 Proyectos
     </h2>
