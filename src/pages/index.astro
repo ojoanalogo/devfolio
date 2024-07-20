@@ -57,8 +57,8 @@ const projects: Array<{
           👋 <span id="helloWorld">print('¡Hola mundo!')</span>
         </p>
         <p class="text-xs md:text-xs">Mi nombre es</p>
-        <h1 class="mt-2 text-4xl md:text-5xl font-medium text-white">
-          Alfonso <span class="text-green-400 font-black">Reyes</span>
+        <h1 class="mt-2 text-4xl md:text-5xl font-medium text-zinc-950 drop-shadow-lg">
+          Alfonso <span class="text-green-800 font-black">Reyes</span>
         </h1>
         <div class="w-full md:w-10/12 lg:w-10/12 text-justify">
           <p class="mt-4">
@@ -69,11 +69,11 @@ const projects: Array<{
           <p class="mt-4">
             Trabajo como ingeniero backend en <a
               target="_blank"
-              class="font-bold text-green-300"
+              class="font-bold text-green-800"
               href="https://monopolio.com.mx">monopolio.com.mx</a
             > y en mis tiempos libres estoy construyendo a <a
               target="_blank"
-              class="font-bold text-green-300"
+              class="font-bold text-green-800"
               href="https://heymony.com">HeyMony</a
             >, un bot con asistencia de IA para ayudar a las personas a que
             tomen mejores decisiones financieras y sanen su relación con el
@@ -85,16 +85,16 @@ const projects: Array<{
             a escribir algo útil (subjetivo) sobre programación o algo
             relacionado con tecnología. Si quieres ver algo más interesante dale
             un vistazo a mi sitio de <a
-              class="font-bold text-green-300"
+              class="font-bold text-green-800"
               target="_blank"
               href="https://ojoanalogo.com">fotografía</a
             >.
           </p>
           <p class="mt-4">
-            📬 Puedes contactarme en <a
-              class="font-black text-green-300"
+            📬 Sientete libre de contactarme por <a
+              class="font-black text-green-800"
               href="mailto:hola@alfon.so"
-              >mi correo</a>
+              >mi correo.</a>
           </p>
         </div>
       </div>
@@ -108,7 +108,7 @@ const projects: Array<{
           lang,
           // add hover with animation
         ) => (
-          <span class="kbd kbd-sm hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem]">{`.${lang}`}</span>
+          <span class="kbd kbd-sm rounded-md hover:shadow-xl hover:scale-110 duration-150 mx-[0.3rem] text-white">{`.${lang}`}</span>
         ),
       )
     }
@@ -121,7 +121,7 @@ const projects: Array<{
   </div>
   <section aria-label="Lista de publicaciones recientes" class="mt-8">
     <h2
-      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-emerald-600 decoration-2"
+      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-emerald-500 decoration-2"
     >
       ✍️ Publicaciones recientes
     </h2>
@@ -138,11 +138,11 @@ const projects: Array<{
 
   <section aria-label="Side projects" class="mt-4">
     <h2
-      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-emerald-600 decoration-2"
+      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-emerald-500 decoration-2"
     >
       🔧 Proyectos
     </h2>
-    <div class="grid sm:grid-cols-2 sm:auto-rows-fr auto-cols-fr gap-4">
+    <div class="grid sm:grid-cols-2 sm:auto-rows-fr auto-cols-fr gap-4 text-white">
       {
         projects.map((project) => (
           <ProjectCard
