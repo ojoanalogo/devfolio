@@ -2,7 +2,7 @@
 const { navbarActiveItemID } = Astro.props;
 const activeClasses = ["text-green-800"];
 
-const collections: Array<{
+const links: Array<{
   title: string;
   id?: string;
   url?: string;
@@ -10,21 +10,21 @@ const collections: Array<{
   redirect?: string;
 }> = [
   {
-    title: "🏠 index.html",
+    title: "index.html",
     id: "home",
     url: "/",
   },
   {
-    title: "✍️ blog.sql",
+    title: "blog.sql",
     id: "blog",
     url: "/blog",
   },
   {
-    title: "🖼️ photos.jpg",
+    title: "photos.jpg",
     redirect: "https://ojoanalogo.com"
   },
   {
-    title: "📬 @email",
+    title: "email@alfon.so",
     redirect: "mailto:hola@alfon.so"
   }
 ];
@@ -34,7 +34,7 @@ const collections: Array<{
   <nav
     id="navigation-menu"
     aria-label="Main menu"
-    class="flex flex-col items-center lg:flex-row content-stretch justify-between drop-shadow-lg"
+    class="flex flex-col item-center lg:flex-row content-stretch justify-between drop-shadow-lg"
   >
   <span class="flex flex-row items-center">
     <a target="_self" href="/">
@@ -77,15 +77,15 @@ const collections: Array<{
       alfon.so
     </a>
   </span>
-    <span class="flex flex-wrap lg:flex-nowrap md:flex-row mt-5 lg:mt-0 p-2 bg-gray-200 rounded-lg">
+    <span class="flex flex-wrap lg:flex-nowrap md:flex-row lg:mt-0 text-sm items-center">
       {
-        collections.map((link) => {
+        links.map((link) => {
           return (
             <a
               href={link.redirect ? link.redirect : link.url}
               target={link.redirect ? "_blank" : "_self"}
               id={link.id}
-              class="px-4 py-1 hover:underline rounded-lg whitespace-nowrap"
+              class="pr-4 py-1 hover:underline rounded-lg whitespace-nowrap"
             >
               {link.title}
             </a>
