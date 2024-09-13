@@ -40,11 +40,11 @@ const projects: Array<{
     aria-label="Descripción general del sitio y del autor"
     class="text-sm"
   >
-    <div
-      class="flex flex-col md:flex-row justify-between items-center mb-6"
-    >
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6">
       <div class="avatar grow-0">
-        <div class="w-40 h-40 rounded-full hover:scale-125 drop-shadow-lg hover:drop-shadow-2xl transition">
+        <div
+          class="w-40 h-40 rounded-full hover:scale-105 drop-shadow-md hover:drop-shadow-2xl transition"
+        >
           <Picture
             widths={[400]}
             src={profile}
@@ -53,48 +53,47 @@ const projects: Array<{
         </div>
       </div>
       <div class="grow w-full md:ml-10 mt-5 md:mt-0">
-        <p class="text-lg md:text-md font-bold mb-6 drop-shadow-md">
+        <p class="text-lg md:text-md font-bold drop-shadow-sm">
           👋 <span id="helloWorld">print('¡Hola mundo!')</span>
         </p>
-        <p class="text-xs md:text-xs">Mi nombre es</p>
-        <h1 class="mt-2 text-4xl md:text-5xl font-medium text-zinc-950 drop-shadow-md">
-          Alfonso <span class="text-purple-800 font-black">Reyes</span>
+        <h1
+          class="mt-2 text-4xl md:text-5xl font-medium text-zinc-950 drop-shadow-md"
+        >
+          Alfonso <span class="text-cyan-800 font-black">Reyes</span>
         </h1>
         <div class="w-full md:w-11/12 lg:w-11/12 text-justify">
-          <p class="mt-4">
-            Soy un ingeniero <span class="font-black">backend</span> y <span
+          <p class="mt-2">
+            Ingeniero <span class="font-black">backend</span> y <span
               class="font-black">fotógrafo</span
-            > de México. Me apasiona la tecnología y construir cosas útiles.
+            > de México.<br />Me apasiona la tecnología y construir cosas
+            útiles.
           </p>
-          <p class="mt-4">
-            Trabajo como ingeniero backend en <a
+          <p class="mt-2">
+            Trabajo en <a
               target="_blank"
-              class="font-bold text-purple-800"
+              class="font-bold text-cyan-800"
               href="https://monopolio.com.mx">monopolio.com.mx</a
             > y en mis tiempos libres estoy construyendo a <a
               target="_blank"
-              class="font-bold text-purple-800"
+              class="font-bold text-cyan-800"
               href="https://heymony.com">HeyMony</a
-            >, un bot con asistencia de IA para ayudar a las personas a que
-            tomen mejores decisiones financieras y sanen su relación con el
-            dinero.
+            >, una plataforma de finanzas personales con asistencia de IA para
+            ayudar a las personas a que tomen mejores decisiones financieras y
+            mejoren su relación con el dinero.
           </p>
 
-          <p class="mt-4">
-            De vez en cuando voy a recordar de la existencia de este sitio y voy
-            a escribir algo útil (subjetivo) sobre programación o algo
-            relacionado con tecnología. Si quieres ver algo más interesante dale
-            un vistazo a mi sitio de <a
-              class="font-bold text-purple-800"
+          <p class="mt-2">
+            Si quieres ver algo más interesante dale un vistazo a mi sitio de <a
+              class="font-bold text-cyan-800"
               target="_blank"
               href="https://ojoanalogo.com">fotografía</a
             >.
           </p>
-          <p class="mt-4">
-            📬 Sientete libre de contactarme por <a
-              class="font-bold text-purple-800"
-              href="mailto:hola@alfon.so"
-              >mi correo.</a>
+          <p class="mt-2">
+            📬 Sientete libre de contactarme por mi correo: <a
+              class="font-bold text-cyan-800"
+              href="mailto:hola@alfon.so">hola@alfon.so</a
+            >
           </p>
         </div>
       </div>
@@ -121,7 +120,7 @@ const projects: Array<{
   </div>
   <section aria-label="Lista de publicaciones recientes" class="mt-8">
     <h2
-      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-purple-700 decoration-2"
+      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-cyan-700 decoration-2"
     >
       ✍️ Publicaciones recientes
     </h2>
@@ -138,11 +137,13 @@ const projects: Array<{
 
   <section aria-label="Side projects" class="mt-4">
     <h2
-      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-purple-700 decoration-2"
+      class="title mb-6 text-sm font-bold underline underline-offset-8 decoration-cyan-700 decoration-2"
     >
       🔧 Proyectos
     </h2>
-    <div class="grid sm:grid-cols-2 sm:auto-rows-fr auto-cols-fr gap-4 text-white">
+    <div
+      class="grid sm:grid-cols-2 sm:auto-rows-fr auto-cols-fr gap-4 text-white"
+    >
       {
         projects.map((project) => (
           <ProjectCard

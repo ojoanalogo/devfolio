@@ -1,6 +1,6 @@
 ---
 const { navbarActiveItemID } = Astro.props;
-const activeClasses = ["text-purple-800"];
+const activeClasses = ["text-cyan-800"];
 
 const links: Array<{
   title: string;
@@ -30,14 +30,14 @@ const links: Array<{
   <nav
     id="navigation-menu"
     aria-label="Main menu"
-    class="flex flex-col item-center lg:flex-row content-stretch justify-between drop-shadow-lg"
+    class="flex flex-col item-center lg:flex-row content-stretch justify-between"
   >
   <span class="flex flex-row items-center">
     <a target="_self" href="/">
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        class="fill-zinc-950 hover:scale-150 hover:fill-purple-800 transform transition-transform duration-200 ease-in-out"
+        class="fill-zinc-950 hover:scale-150 hover:fill-cyan-800 transform transition-transform duration-200 ease-in-out"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         width="50px"
         height="50px"
@@ -68,7 +68,7 @@ const links: Array<{
     <a
       href="/"
       target="_self"
-      class="py-4 px-8 font-bold md:text-md whitespace-nowrap text-zinc-900 hover:text-purple-700 duration-200"
+      class="py-4 px-8 font-bold md:text-md whitespace-nowrap text-zinc-900 hover:text-cyan-700 duration-200"
     >
       alfon.so
     </a>
